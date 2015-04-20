@@ -7,12 +7,12 @@ title: Home
   {% for post in paginator.posts %}
   <div class="post">
     <h1 class="post-title">
-      <a href="{{ site.baseurl }}/{{ post.url }}">
+      <a href="{{ site.baseurl }}{{ post.url }}">
         {{ post.title }}
       </a>
     </h1>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <span class="post-date">{{ post.date | localize: "%d. %b %Y" }}</span>
 
     {{ post.content }}
   </div>
@@ -21,18 +21,18 @@ title: Home
 
 <div class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
+    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">tilbake i tid</a>
   {% else %}
     <span class="pagination-item older">Older</span>
   {% endif %}
   {% if paginator.previous_page %}
     {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>
+      <a class="pagination-item newer" href="{{ site.baseurl }}/">frem i tid</a>
     {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
+      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">frem i tid</a>
     {% endif %}
   {% else %}
-    <span class="pagination-item newer">Newer</span>
+    <span class="pagination-item newer">frem i tid</span>
   {% endif %}
 </div>
 
