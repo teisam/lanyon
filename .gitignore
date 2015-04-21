@@ -1,6 +1,8 @@
 # Ignore docs files
 _gh_pages
 _site
+content
+_posts
 .ruby-version
 
 # Numerous always-ignore extensions
@@ -28,7 +30,6 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 .idea
-content
 
 # Komodo
 *.komodoproject
